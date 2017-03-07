@@ -24,7 +24,8 @@
 			};
 			this.$ul.html(Mustache.render(this.template, data));
 		},
-		addPerson: function(){
+		addPerson: function(e){
+			e.preventDefault();
 			const val = this.$input.val();
 			if (val === '') {return}; 
 			this.people.push(val)
@@ -32,6 +33,7 @@
 			this.$input.val('');
 		},
 		deletePerson: function(e){
+			e.preventDefault();
 			var $remove = $(e.target).closest('li');
 			var i = this.$ul.find('li').index($remove);
 
