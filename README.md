@@ -1,4 +1,4 @@
 # VanillaJS
-Primitive LIst. No libraries, no frameworks, no bundler: pure elegant javascript.
+Primitive List. No libraries, no frameworks, no bundler: pure elegant javascript and jQuery.
 
 https://www.bryantruelas.com/vanillalist
