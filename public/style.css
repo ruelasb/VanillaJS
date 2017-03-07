@@ -1,0 +1,68 @@
+/* Custom CSS */
+
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding-top: 20px;
+  height: 100vh;
+	background: #449d47; /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover,  #449d47 0%, #337535 100%); /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover,  #449d47 0%,#337535 100%); /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center,  #449d47 0%,#337535 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#449d47', endColorstr='#337535',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+#people {
+	padding-left: 0px;
+}
+#people > li {
+	list-style: none;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+#people > li:nth-child(even) {
+	background-color: lightgray;
+}
+#people > li > span {
+	font-size: 1.5em;
+}
+
+#people > li > a {
+	float: right;
+	margin: 5px;
+}
+
+i {
+	font-size: 1.7em!important;
+}
+
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+}
+.site-wrapper-inner {
+  display: table-cell;
+}
+
+
+/* Affix and center */
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 730px!important;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+  vertical-align: middle;
+  }
+}
+
+
