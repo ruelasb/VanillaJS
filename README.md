@@ -1,4 +1,2 @@
 # VanillaJS
-Primitive List. No libraries, no frameworks, no bundler: pure elegant javascript (okay, some jQuery). 
-
-https://www.bryantruelas.com/vanillalist
+Reavealing module pattern provides the ability to be consumed as an API. Only exposing the functions/methods that need to be accessible to the consumer.
