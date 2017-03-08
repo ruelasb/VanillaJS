@@ -1,47 +1,48 @@
-(function(){
+var people = (function(){
 
-	var people = {
-		people: [],
-		init: function(){
-			this.cacheDom();
-			this.bindEvents();
-			this.render();
-		},
-		cacheDom: function(){
-			this.$el = $('#peopleModule');
-			this.$button = this.$el.find('button');
-			this.$input = this.$el.find('input');
-			this.$ul = this.$el.find('ul');
-			this.template = this.$el.find('#people-template').html();
-		},
-		bindEvents: function(){
-			this.$button.on('click', this.addPerson.bind(this))
-			this.$ul.on('click', 'a.delete', this.deletePerson.bind(this))
-		},
-		render: function(){
-			var data = {
-				people: this.people,
-			};
-			this.$ul.html(Mustache.render(this.template, data));
-		},
-		addPerson: function(e){
-			e.preventDefault();
-			const val = this.$input.val();
-			if (val === '') {return}; 
-			this.people.push(val)
-			this.render();
-			this.$input.val('');
-		},
-		deletePerson: function(e){
-			e.preventDefault();
-			var $remove = $(e.target).closest('li');
-			var i = this.$ul.find('li').index($remove);
+		var people = [];
 
-			this.people.splice(i, 1);
-			this.render();
+		//cache DOM
+		$el = $('#peopleModule');
+		$button = $el.find('button');
+		$input = $el.find('input');
+		$ul = $el.find('ul');
+		template = $el.find('#people-template').html();
+
+		//bind events
+		$button.on('click', addPerson)
+		$ul.on('click', 'a.delete', deletePerson)
+
+		_render();
+
+		function _render(){
+			$ul.html(Mustache.render(template, {people: people}));
 		}
-	};
 
-	people.init();
+		function addPerson(value){
+			var name = (typeof value === 'string') ? value.trim() : $input.val().trim();
+			if (name === ''){return} else if(typeof value === 'object'){ value.preventDefault() };
+			people.push(name)
+			_render();
+			$input.val('');
+		}
+
+		function deletePerson(event){
+			let i;
+			if ( typeof event === 'number'){
+				i = event;
+			} else {
+				event.preventDefault();
+				var $remove = $(event.target).closest('li');
+				i = $ul.find('li').index($remove);
+			}
+			people.splice(i, 1);
+			_render();
+		}
+
+		return {
+			addPerson: addPerson,
+			deletePerson: deletePerson
+		}
 
 })()
