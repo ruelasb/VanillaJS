@@ -15,6 +15,22 @@ body {
 	background: radial-gradient(ellipse at center,  #449d47 0%,#337535 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#449d47', endColorstr='#337535',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+/*stats module*/
+.stats > h5 {
+  display: inline-block;
+}
+.stats > p {
+  font-size: 1em!important;
+  display: inline-block;
+}
+
+.stats > hr {
+  margin: 0px;
+}
+
+/*people module*/
+
 #people {
 	padding-left: 0px;
 }

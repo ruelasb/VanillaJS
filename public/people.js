@@ -17,6 +17,8 @@ var people = (function(){
 
 		function _render(){
 			$ul.html(Mustache.render(template, {people: people}));
+			events.emit("peopleChanged", people.length);
+			//stats.setPeople(people.length);
 		}
 
 		function addPerson(value){
