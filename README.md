@@ -3,7 +3,7 @@ Reavealing module pattern provides the ability to be consumed as an API. Only ex
 
 ### Project Branches
 
-| Master (Branch) | `Revealing Module Pattern` |  PubSub |
-|-----------------|:------------------------:|:-------:|
-| No API, no Globals. | API                  | API     |
+| Master (Branch) | `Revealing Module Pattern` |  PubSub Pattern |
+|-----------------|:------------------------:|:-----------------:|
+| No API, no Globals. |        API           |        API        |
 | No Module Subscription | Internal Subscription |  Internal subscription w/ coupling mediator |
