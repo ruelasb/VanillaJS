@@ -3,11 +3,11 @@ var people = (function(){
 		var people = [];
 
 		//cache DOM
-		$el = $('#peopleModule');
-		$button = $el.find('button');
-		$input = $el.find('input');
-		$ul = $el.find('ul');
-		template = $el.find('#people-template').html();
+		var $el = $('#peopleModule');
+		var $button = $el.find('button');
+		var $input = $el.find('input');
+		var $ul = $el.find('ul');
+		var template = $el.find('#people-template').html();
 
 		//bind events
 		$button.on('click', addPerson)
@@ -33,7 +33,7 @@ var people = (function(){
 				i = event;
 			} else {
 				event.preventDefault();
-				var $remove = $(event.target).closest('li');
+				var $remove = $(event.target).closest('li'); 
 				i = $ul.find('li').index($remove);
 			}
 			people.splice(i, 1);
